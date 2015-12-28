@@ -136,4 +136,15 @@ typedef enum {
 
 #define ENC_READLOCATION_ANY (uint16_t)(~0)
 
+/** Interrupt masks, apply to both enable (EIE register) and status (EIR) */
+#define ENC_INT_TXER 1<<0  /**< Transmit error:a transmit abort has occurred */
+#define ENC_INT_RXER 1<<1  /**< Receive error: receive buffer overflow */
+#define ENC_INT_WOL  1<<2  /**< Wake on LAN */
+#define ENC_INT_TX   1<<3  /**< Transmit: transmit ended */
+#define ENC_INT_LINK 1<<4  /**< Link change: link status has changed */
+#define ENC_INT_DMA  1<<5  /**< DMA: a DMA operation has completed */
+#define ENC_INT_PKT  1<<6  /**< Receive Packet Pending: there are packets in the receive buffer */
+#define ENC_INT_INT  1<<7  /**< Global interrupt enable */
+
+
 /** @} @} */
